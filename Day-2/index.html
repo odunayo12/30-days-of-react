@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500|Roboto:300,400,500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css">
+    <title>30 Days Of React Challenge</title>
+
+</head>
+
+<body>
+    <div class="root"></div>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        console.log(React);
+        // To get the root element from the HTML document
+        const rootElement = document.querySelector('.root')
+        const currentYear = new Date().getFullYear()
+        const genDetails = {
+            prerequisites: {
+                id: "1",
+                styling: "CSS",
+                reperesentation: "HTML",
+                tech: "JavaScript"
+            },
+            authorDetails: {
+                id: "1",
+                fName: "Odunayo",
+                lName: "Rotimi"
+            }
+
+        }
+
+
+
+        //const jsxElement = <h1>I am JSX Element</h1>
+        // style use as style={headerStyles} in the header element
+        // const headerStyles = {
+        //     backgroundColor: '#61DBFB',
+        //     fontFamily: 'Helvetica Neue',
+        //     padding: 25,
+        //     lineHeight: 1.5,
+        // }
+        // JSX element
+        const header = (
+            <header
+            >
+                <div className='header-wrapper'>
+                    <h1>Welcome to 30 Days Of React</h1>
+                    <h2>Getting Started React</h2>
+                    <h3>JavaScript Library</h3>
+                    <p>{genDetails.authorDetails.lName}</p>
+                    <small>Oct 2, 2020</small></div>
+            </header>
+        )
+
+        // // JSX element, main
+        // const mainStyles = {
+        //     backgroundColor: '#F3F0F5',
+        // }
+        // JSX element for the main part of the website
+        const main = (
+            <main >
+                <div className='main-wrapper'><p>Prerequisite to get started {' '} react.js:</p>
+                    <ul>
+                        <li>{genDetails.prerequisites.reperesentation}</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                    </ul></div>
+            </main>
+        )
+
+        // const footerStyles = {
+        //     backgroundColor: '#61DBFB',
+        // }
+
+        // JSX element for the footer part of the website
+        const footer = (
+            <footer >
+                <div className='footer-wrapper'>
+                    <p>Copyright: {currentYear}</p>
+                </div>
+            </footer>
+        )
+
+        // JSX element which contain all, it is a container or parent
+        const app = (
+            <div>
+                {header}
+                {main}
+                {footer}
+            </div>
+        )
+
+
+        //ReactDOM.render(app, rootElement)
+
+        // or
+        ReactDOM.render([header, main, footer], rootElement)
+
+    </script>
+</body>
+
+</html>
